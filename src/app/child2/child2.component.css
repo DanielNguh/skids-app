@@ -1,0 +1,17 @@
+.example-card {
+  width: 167px;
+  height: 30px;
+  display: block;
+  padding-left: 0%;
+}
+
+.example-header-image {
+  background-image: url('../../assets/images/kid2.png');
+  background-size: cover;
+
+}
+
+.kid-name {
+  font-weight: light;
+  font-size: 16;
+}

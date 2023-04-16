@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
@@ -7,4 +9,9 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'angular-material-learn';
+  onChange($event: any) {
+    console.log($event);
+
+  }
 }
+

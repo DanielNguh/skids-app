@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="54" height="54" viewBox="0 0 54 54">
+  <g id="Group_6875" data-name="Group 6875" transform="translate(-458 -275)">
+    <g id="Group_12" data-name="Group 12" transform="translate(288 -87)">
+      <circle id="Ellipse_11" data-name="Ellipse 11" cx="27" cy="27" r="27" transform="translate(170 362)" fill="#2185dc" opacity="0.1"/>
+      <circle id="Ellipse_10" data-name="Ellipse 10" cx="18" cy="18" r="18" transform="translate(179 371)" fill="#2185dc" opacity="0.2"/>
+      <circle id="Ellipse_9" data-name="Ellipse 9" cx="10" cy="10" r="10" transform="translate(187 379)" fill="#2185dc"/>
+    </g>
+    <g id="Group_16" data-name="Group 16" transform="translate(430.9 80.661)">
+      <path id="Subtraction_105" data-name="Subtraction 105" d="M7.993,21.454h0a28.626,28.626,0,0,1-4-4.048,21.241,21.241,0,0,1-2.747-4.311A12.272,12.272,0,0,1,0,7.925,7.653,7.653,0,0,1,.613,4.934,8.1,8.1,0,0,1,2.3,2.4a7.965,7.965,0,0,1,11.406,0,8.089,8.089,0,0,1,1.683,2.53A7.677,7.677,0,0,1,16,7.925a12.253,12.253,0,0,1-1.251,5.169A21.233,21.233,0,0,1,12,17.405a28.664,28.664,0,0,1-4,4.048ZM8.219,3.891a4.134,4.134,0,1,0,4.134,4.134A4.138,4.138,0,0,0,8.219,3.891Z" transform="translate(46.1 199.5)" fill="#22243b"/>
+    </g>
+  </g>
+</svg>

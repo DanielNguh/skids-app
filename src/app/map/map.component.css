@@ -1,0 +1,80 @@
+.popupin {
+  position: fixed;
+  width: 200px;
+  height: 30px;
+  display: block;
+  padding-left: 0.5%;
+  padding-top: 0.5%;
+  top: 9em;
+  right: 0.6em;
+  background-image: linear-gradient(to left,#228B22, #90db44);
+  opacity: .86;
+  }
+.popup-image {
+  background-image: url('../../assets/images/kid1.png');
+  background-size: cover;
+  border-radius: 0%;
+}
+.popup-text {
+  color: white;
+}
+
+.mat-icon {
+  font-size: 30px;
+}
+#close{
+  font-size: 20px;
+  right: end;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding-right: 0px;
+  line-height: 14px;
+  min-width: auto;
+}
+.popupout {
+  position: fixed;
+  width: 200px;
+  height: 30px;
+  display: block;
+  padding-left: 0.5%;
+  padding-top: 0.5%;
+  top: 14em;
+  right: 0.6em;
+  background-image: linear-gradient(to left,#a31d1d, #f31515);
+  opacity: .86;
+  }
+
+  .fade-in{
+    animation: fadeIn 1s;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 0.86;
+    }
+  }
+
+  .refresh {
+    position: fixed;
+    padding-left: 0.5%;
+    padding-top: 0.5%;
+    top: 0.4em;
+    right: 0.6em;
+    z-index: 1;
+    color: white;
+
+
+  }
+  .live {
+    position: fixed;
+    padding-left: 0.5%;
+    padding-top: 0.4%;
+    top: 0.4em;
+    right: 2.5em;
+    z-index: 1;
+    color: white;
+  }
+

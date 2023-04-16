@@ -1,0 +1,91 @@
+<!-- 89.5% for height 1160px for width-->
+<aol-map height="89.5%" width="100%">
+  <aol-interaction-default></aol-interaction-default>
+  <aol-control>
+    <aol-content>
+      <button mat-raised-button class="ol-full-screen ol-unselectable ol-control" id="hello" (click)="satelliteDisplay()">{{buttonEl}}</button>
+    </aol-content>
+  </aol-control>
+  <aol-view [zoom]="zoom">
+    <aol-coordinate [x]="tracks[i].longitude" [y]="tracks[i].latitude" [srid]="'EPSG:4326'"></aol-coordinate>
+  </aol-view>
+  <aol-layer-tile [opacity]="opacity" >
+    <aol-source-xyz *ngIf="!satelliteView"
+    url="http://mt0.google.com/vt/lyrs=m&hl=en&x={x}&y={y}&z={z}"
+    crossOrigin=""
+    ></aol-source-xyz>
+    <aol-source-xyz *ngIf="satelliteView"
+    url="http://mt0.google.com/vt/lyrs=s&hl=en&x={x}&y={y}&z={z}"
+    crossOrigin=""
+    >
+    </aol-source-xyz>
+  </aol-layer-tile>
+  <aol-layer-vector>
+    <aol-source-vector>
+      <aol-feature>
+        <aol-geometry-point>
+          <aol-coordinate [srid]="'EPSG:4326'"
+                          [x]="tracks[i].longitude"
+                          [y]="tracks[i].latitude"></aol-coordinate>
+        </aol-geometry-point>
+        <aol-style>
+          <!-- <div id="map-text">
+            <aol-style-text [offsetY]="-27" text="Check In"
+            [scale]="1.5" [textAlign]="'center'" textBaseLine="ideographic"></aol-style-text>
+
+          </div>
+ -->
+          <aol-style-icon [anchorOrigin]="'top-left'" [anchor]="[0.5, 0.5]"
+                          [src]="'/assets/images/marker/marker-blue.svg'"></aol-style-icon>
+        </aol-style>
+      </aol-feature>
+    </aol-source-vector>
+  </aol-layer-vector>
+  <aol-control>
+		<aol-content>
+      <div class="ol-overlaycontainer-stopevent">
+        <div class="ol-zoom ol-unselectable ol-control">
+          <button  [title]="titleZoomIn" class="ol-zoom-in" type="button" title="Zoom in" (click)="increaseZoom()">+</button>
+          <button  [title]="titleZoomOut" class="ol-zoom-out" type="button" title="Zoom out" (click)="decreaseZoom()">−</button>
+        </div>
+        <div class="ol-attribution ol-unselectable ol-control ol-uncollapsible">
+          <ul><li>© <a href="https://www.openstreetmap.org/copyright">NguhDaniel</a></li></ul>
+        </div>
+      </div>
+    </aol-content>
+  </aol-control>
+</aol-map>
+
+<!-- Check in -->
+<mat-card  *ngIf=" !inpopupClosed && tracks[i].checkBit" class="popupin fade-in">
+  <mat-card-header>
+    <div mat-card-avatar class="popup-image"></div>
+    <div>
+      <mat-icon [ngStyle]="{'color':'white'}">login</mat-icon>
+    </div>
+    <mat-card-title class="popup-text">Check In</mat-card-title>
+    <mat-card-subtitle class="popup-text">At {{tracks[i].time}}</mat-card-subtitle>
+    <div  (click) ="closePopupIn()">
+      <mat-icon  id="close" aria-label="Close">close</mat-icon>
+    </div>
+  </mat-card-header>
+</mat-card>
+
+
+  <!-- Check Out -->
+    <mat-card *ngIf="!outpopupClosed && !tracks[i].checkBit" class="popupout fade-in">
+      <mat-card-header>
+        <div mat-card-avatar class="popup-image"></div>
+        <div class="check-in">
+          <mat-icon [ngStyle]="{'color':'white'}">logout</mat-icon>
+        </div>
+        <mat-card-title class="popup-text">Check Out</mat-card-title>
+        <mat-card-subtitle class="popup-text">At {{tracks[i].time}}</mat-card-subtitle>
+        <div  (click) ="closePopupOut()">
+          <mat-icon  id="close" aria-label="Close">close</mat-icon>
+        </div>
+      </mat-card-header>
+    </mat-card>
+
+    <mat-icon class="refresh" (click)="refresh()">refresh</mat-icon>
+    <mat-icon class="live" (click)="live()">live_tv</mat-icon>
